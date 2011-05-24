@@ -3,6 +3,7 @@
   "password" : "password",
   "port" : 3010,
   "path" : "ghook/",
+  "log" : "/inputs/2bf8eddc-bb62-4dd8-882c-72ae3153f0a3",
   "repos": {
     "https://github.com/troufster/whip" : {
       "plugins" : {

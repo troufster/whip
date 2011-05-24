@@ -1,6 +1,10 @@
-var  fs = require('fs');
+
 require.paths.unshift('./lib');
 require.paths.unshift('./plugins');
+
+var fs = require('fs');
+var receiver = require('receiver');
+var Logger = require('logger');
 var config; 
 
 //Read config and boot listener
@@ -12,18 +16,10 @@ fs.readFile('./config.json', function(err,data) {
   try {
     config = JSON.parse(data.toString());
     
-   //Require repo plugins 
-  //  for (var plugs in config.repos) {
-  //    var plug = config.repos[plugs];
-  //    var count = plug.length;
-  //    for(i = 0; i < count; i++) {
-  //      console.log(config.repos[plugs][i]);
-  //      config.repos[plugs][i] = require(config.repos[plugs][i]); 
-  //    }
-  //  }
+    config.logger = new Logger(config); 
 
-    console.log(config);
-    var receiver = require('receiver');
+    config.logger.write("Whip starting...");
+
     receiver(config);
   } 
   catch(err) { 

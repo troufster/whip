@@ -1,7 +1,7 @@
 var sys = require('sys');
 var spawn = require('child_process').spawn;
 
-module.exports = function(payload, params) {
+module.exports = function(payload, params, config) {
   
  var clone = spawn(params[0], params.slice(1)); 
 
