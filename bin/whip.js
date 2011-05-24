@@ -13,14 +13,14 @@ fs.readFile('./config.json', function(err,data) {
     config = JSON.parse(data.toString());
     
    //Require repo plugins 
-    for (var plugs in config.repos) {
-      var plug = config.repos[plugs];
-      var count = plug.length;
-      for(i = 0; i < count; i++) {
-        console.log(config.repos[plugs][i]);
-        config.repos[plugs][i] = require(config.repos[plugs][i]); 
-      }
-    }
+  //  for (var plugs in config.repos) {
+  //    var plug = config.repos[plugs];
+  //    var count = plug.length;
+  //    for(i = 0; i < count; i++) {
+  //      console.log(config.repos[plugs][i]);
+  //      config.repos[plugs][i] = require(config.repos[plugs][i]); 
+  //    }
+  //  }
 
     console.log(config);
     var receiver = require('receiver');

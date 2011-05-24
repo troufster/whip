@@ -4,8 +4,11 @@
   "port" : 3010,
   "path" : "ghook/",
   "repos": {
-    "https://github.com/troufster/whip" : [
-      "dummy", "dummy"
-    ] 
+    "https://github.com/troufster/whip" : {
+      "plugins" : {
+        "exec" : ["sample/dummy.sh", "arg1", "arg2"],
+        "execpy" : ["sample/dummy.py", "arg1", "arg2"]
+      } 
+    } 
   }
 }
